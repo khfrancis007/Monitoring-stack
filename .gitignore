@@ -1,0 +1,5 @@
+*.pyc
+__pycache__/
+.env
+grafana_data/
+prometheus_data/
