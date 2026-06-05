@@ -25,5 +25,17 @@ def error():
     REQUEST_COUNT.labels(endpoint='/error').inc()
     return 'Simulated error!', 500
 
+@app.route('/home')
+def homepage():
+    REQUEST_COUNT.labels(endpoint='/home').inc()
+    with REQUEST_LATENCY.labels(endpoint='/home').time():
+        time.sleep(random.uniform(0.1, 0.5))
+    return 'This is the home page'
+
+@app.errorhandler(404)
+def not_found(e):
+    REQUEST_COUNT.labels(endpoint='404').inc()
+    return 'Page not found!', 404
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
