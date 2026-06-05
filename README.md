@@ -9,10 +9,10 @@ This project simulates a production monitoring environment — the open source e
 ## Stack
 
 - **Locust** - Simulate User traffic and stress testing
-- **Flask** — Python web application (the monitored service)
-- **Prometheus** — Metrics collection and storage (scrape interval: 3s)
-- **Grafana** — Real-time dashboards and alerting
-- **Docker** — Containerized deployment via Docker Compose
+- **Flask** - Python web application (the monitored service)
+- **Prometheus** - Metrics collection and storage (scrape interval: 3s)
+- **Grafana** - Real-time dashboards and alerting
+- **Docker** - Containerized deployment via Docker Compose
 
 ## Features
 
